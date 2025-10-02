@@ -1,0 +1,92 @@
+// Color Variables
+$theme-yellow: #FFD500;
+$theme-orange: #F29602;
+$theme-blue: #6458D8;
+$black: #000;
+$white: #fff;
+
+// Class Variables
+$homePage: ".homePage";
+$navbar: ".navbar";
+$modal: ".modal";
+$filter: ".filter";
+
+/*--------------Mixins------------------*/
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin border-radius($radius: none) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin appearance() {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  //font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin abs-position($top, $right, $bottom, $left) {
+  // @include abs-position(10px, 10px, auto, auto);
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Theme Color Change
+$themes: (
+  dark: (
+    // card-bg: $bg--card--vikas,
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}

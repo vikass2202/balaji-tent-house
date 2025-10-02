@@ -1,0 +1,92 @@
+@import '../../mixins.scss';
+
+.footer{
+    background: #6458d8;
+    padding: 54px 25px;
+    padding-top: 100px;
+
+    .row {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .left_section{
+        .footer_logo{
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        h5{
+            font-family: "Ubuntu", sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: $white;
+            margin-bottom: 10px;
+        }
+        p{
+            font-family: "Ubuntu", sans-serif;
+            font-size: 18px;
+            color: $white;
+            margin-bottom: 0px;
+        }
+    }
+    h6{
+        color: $white;
+        font-family: "Ubuntu", sans-serif;
+        @include fontSize(20px);
+        font-weight: 600;
+        line-height: 25px;
+        margin-bottom: 24px;
+    }
+    ul{
+        li{
+            font-family: 'Ubuntu', sans-serif;
+            @include fontSize(15px);
+            line-height: 21px;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+
+            .MuiLink-root{             
+                color: $white;
+                &:hover,
+                &:focus {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+    .address{
+        color: $white;
+        font-family: "Ubuntu", sans-serif;
+        @include fontSize(15px);
+        line-height: 21px;
+        margin-bottom: 16px;
+    }
+    .contact{
+        @extend .address
+    }
+    .email{
+        @extend .address
+    }
+    .website_link{
+        @extend .address
+    }
+    hr{
+        border: 1px solid #ffffff99 !important;
+    }
+    .copyright{
+        color: $white;
+        font-family: "Ubuntu", sans-serif;
+        @include fontSize(15px);
+        line-height: 21px;
+        margin-bottom: 0px;
+    }
+    .social_link ul{
+        display: flex;
+        justify-content: end;
+        li{
+            margin-bottom: 8px;
+            margin-right: 19px;
+        }
+    }
+
+}

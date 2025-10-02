@@ -1,0 +1,215 @@
+@import '../../mixins.scss';
+
+
+.MuiGridLegacy-container{
+
+}
+.homepage_wrapper{
+    padding-top: 80px;
+    .row {
+        max-width: 1224px;
+        width: 100%;
+        margin: 0 auto;
+    }     
+    .banner_content{
+        @include position(absolute, $bottom: 50%, $left: 50%);
+        transform: translate(-50%, 50%);
+        backdrop-filter: blur(4px);
+        padding: 16px;
+        text-align: center;
+        h3{
+            color: $white;
+            font-size: 58px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: "Lora", sans-serif;
+        }
+        h5{
+            color: $white;
+            font-size: 30px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        p{
+            color: $white;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        .cta_button{
+            color: $white;
+            border: 1px solid $theme-blue;
+            padding: 6px 10px;
+            @include border-radius(10px);
+            font-size: 20px;
+            background-color: $theme-blue;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+        }
+        .cta_button:hover{
+            color: $theme-blue;
+            border: 1px solid $theme-blue;
+            background-color: $white;
+            // transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+    }
+
+    .main_banner{
+        .react-multi-carousel-dot-list {
+            bottom: 50px !important;
+        }
+        .react-multi-carousel-dot button {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    // about section css starts here
+
+    .about_content{
+        padding: 80px 0;
+    }
+    .about_content{
+        h5{
+            font-family: "Lora", sans-serif;
+            font-size: 40px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        h6{
+            font-size: 25px;
+            margin-bottom: 0;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        p{
+            font-size: 20px;
+            margin-bottom: 0;
+            text-align: justify;
+            line-height: 30px;
+            letter-spacing: 1px;
+            .read-more{
+                display: block;
+                padding-top: 5px;
+                cursor: pointer;
+                width: fit-content;
+                margin: 0 auto;
+            }
+        }
+    }
+
+
+    // counter section css starts here
+    .counter_section{
+        background: #f3f2fc;
+        padding: 80px 0;
+        h6{
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 51px;
+            margin-bottom: 15px;
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                width: 50%;
+                position: relative;
+                margin-bottom: 24px;
+                // text-align: center;
+
+                &:nth-child(even) {
+                    padding-left: 60px;
+                    border-left: 2px solid rgba(0, 0, 0, 0.1);
+                }
+                .counterdiv {
+                    padding: 10px 0px;
+
+                    h3 {
+                        @include fontSize(42px);
+                        line-height: 50px;
+                        font-weight: 700;
+
+                        @media(max-width:992px) {
+                            @include fontSize(28px);
+                            line-height: 40px;
+                        }
+                    }
+
+                    p {
+                        @include fontSize(16px);
+                        line-height: 32px;
+                        font-weight: 400;
+                        color: #222222;
+                    }
+                }
+            }
+        }
+    }
+
+    // testimonial section css starts here
+    .testimonial_section{
+        padding: 80px 0;
+    }
+    .testimonial_section{
+        h5{
+            font-family: "Lora", sans-serif;
+            font-size: 40px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+            
+        .feedback_box{
+            width: 100%;
+            .testimonial_box{
+                background: #fff;
+                @include border-radius(10px);
+                padding: 20px;
+                text-align: center;
+                border: 1px solid $theme-blue;
+                width: 384px;
+                min-height: 380px;
+                margin: 40px 0px 50px;
+                img{
+                    margin-bottom: 15px;
+                }
+                h6{
+                    font-size: 24px;
+                    margin-bottom: 15px;
+                }
+                p{
+                    font-family: 'ubuntu', sans-serif;
+                    font-size: 16px;
+                    margin-bottom: 30px;
+                    letter-spacing: 1px;
+                    text-align: justify;
+                    line-height: 24px;
+                    min-height: 145px;
+                }
+                .MuiStack-root{
+                    display: block;
+                    text-align: center;
+                }
+            }
+            .react-multi-carousel-dot-list {
+                bottom: 0px !important;
+            }
+            .react-multi-carousel-dot button {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border: none;
+            }
+            .react-multi-carousel-dot--active button{
+                background-color: $theme-blue;
+            }
+        }
+        
+    }
+
+
+}

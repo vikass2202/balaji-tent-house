@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import Navbar from '../../Component/Navbar/Navbar'
 import './Homepage.scss' 
 import { Box, Button, Rating, Stack } from '@mui/material';
@@ -216,7 +216,7 @@ function Homepage() {
                         >
                             {client_feedback.map((data, index) => (                           
                                 <Box className="testimonial_box">
-                                    <img src={data.clientImg} />
+                                    <img src={data.clientImg} alt="homepage banner"/>
                                     <h6>{data.clientName}</h6>
                                     <p>{data.clientDesc}</p>
                                     <Stack spacing={1}>

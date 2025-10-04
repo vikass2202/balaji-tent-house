@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from '../../Component/Navbar/Navbar'
 import './Homepage.scss' 
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from 'react-responsive-carousel';
 import { Box, Button, Rating, Stack } from '@mui/material';
 import Grid from '@mui/material/GridLegacy';
 import CountUp from 'react-countup';
@@ -10,12 +8,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 function Homepage() {
-  const [index, setIndex] = useState(0);
-//   const navigate = useNavigate();
-
-  const handleSelect = (selectedIndex: number) => {
-    setIndex(selectedIndex)
-  }
 
   const bannerImage = [
     {

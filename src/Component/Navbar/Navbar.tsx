@@ -1,6 +1,5 @@
 import { Box, Link } from '@mui/material'
 import Grid from '@mui/material/GridLegacy';
-import React from 'react'
 import "./Navbar.scss";
 
 function Navbar() {
@@ -8,7 +7,7 @@ function Navbar() {
     <Box className="navbar row">
         <Grid container spacing={3} className="row">
             <Grid xs={3}>
-               <a href="javascript:void(0)">
+               <a href="/">
                     <img src="./images/logo.jpeg" alt="logo" className='logo_img'/>
                 </a>
             </Grid>

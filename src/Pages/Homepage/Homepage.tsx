@@ -101,6 +101,12 @@ function Homepage() {
         clientDesc: "Our anniversary celebration was beyond expectations. The team at Balaji Tent House managed everything beautifully, making the day special for all our guests.",
         clientRating: 5,
     },
+    {
+        clientImg: "images/tetsimonial image/1.webp",
+        clientName: "Abhishek",
+        clientDesc: "Our anniversary celebration was beyond expectations. The team at Balaji Tent House managed everything beautifully, making the day special for all our guests.",
+        clientRating: 5,
+    },
   ]
 
    const feedbackResponsive = {

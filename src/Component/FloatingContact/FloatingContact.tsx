@@ -3,6 +3,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import "./FloatingContact.scss";
 
 function FloatingContact() {
+
+  const phone = "919927511503";
+  const message = "Hi, I'm interested in booking an event.";
+
   return (
     <div className="floating_contact">
       <a
@@ -13,7 +17,7 @@ function FloatingContact() {
         <CallIcon />
       </a>
       <a
-        href="https://web.whatsapp.com/send?phone=919927511503&text=Hi%2C%20I'm%20interested%20in%20booking%20an%20event"
+        href={`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`}
         target="_blank"
         className="floating_btn whatsapp_btn"
         rel="noopener noreferrer"

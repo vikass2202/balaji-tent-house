@@ -10,6 +10,10 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import "./Footer.scss";
 
 function Footer() {
+
+  const phone = "919927511503";
+  const message = "Hi, I'm interested in booking an event.";
+  
   return (
     <Box className="site_footer">
       <Grid container spacing={4} className="row">
@@ -19,7 +23,7 @@ function Footer() {
           <ul className="social_links">
             <li><a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" rel="noopener noreferrer"><FacebookIcon /></a></li>
             <li><a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><InstagramIcon /></a></li>
-            <li><a href="https://web.whatsapp.com/send?phone=919927511503&text=Hi%2C%20I'm%20interested%20in%20booking%20an%20event" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer"><WhatsAppIcon /></a></li>
+            <li><a href={`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`} target="_blank" aria-label="WhatsApp" rel="noopener noreferrer"><WhatsAppIcon /></a></li>
           </ul>
         </Grid>
 

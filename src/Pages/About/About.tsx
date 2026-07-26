@@ -10,17 +10,22 @@ import PageBanner from "../Pagebanner/PageBanner";
 const team = [
   {
     team_name: "Padam Saini",
-    designation: "Founder & CEO",
+    designation: "Founder",
     team_img: "/images/team/1.webp",
   },
   {
     team_name: "Anand Saini",
-    designation: "Co-Founder & Operations Director",
+    designation: "CEO",
     team_img: "/images/team/2.webp",
   },
   {
+    team_name: "Vishu Saini",
+    designation: "Operations Director",
+    team_img: "/images/team/1.webp",
+  },
+  {
     team_name: "Vijay Rathour",
-    designation: "Sound & Entertainment Manager",
+    designation: "Sound & Entertainment Specialist",
     team_img: "/images/team/3.webp",
   },
   {
@@ -30,12 +35,12 @@ const team = [
   },
   {
     team_name: "Rijwan",
-    designation: "Event Setup Supervisor",
+    designation: "Event Setup Specialist",
     team_img: "/images/team/1.webp",
   },
   {
     team_name: "Tajammul",
-    designation: "Senior Decoration Specialist",
+    designation: "Decoration Specialist",
     team_img: "/images/team/1.webp",
   },
   {

@@ -53,7 +53,7 @@ function Footer() {
           <h6>Get In Touch</h6>
           <ul className="footer_contact">
             <li><LocationOnIcon fontSize="small" /> Dharmawala, Dehradun, U.K.</li>
-            <li><CallIcon fontSize="small" /> <a href="tel:+91XXXXXXXXXX">+91 9927511503</a></li>
+            <li><CallIcon fontSize="small" /> <a href="tel:+919927511503">+91 9927511503</a></li>
             <li><EmailIcon fontSize="small" /> <a href="mailto:info@balajitenthouse.com">info@balajitenthouse.com</a></li>
           </ul>
         </Grid>

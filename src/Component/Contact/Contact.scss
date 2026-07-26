@@ -1,0 +1,221 @@
+@import '../../mixins.scss';
+
+.contact_page{
+    padding: 80px 0 90px;
+    font-family: $font-body;
+
+    .row{
+        max-width: 1224px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .eyebrow{
+        display: block;
+        color: $red;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+    h2{
+        font-family: $font-heading;
+        font-size: 32px;
+        font-weight: 700;
+        color: $black;
+        margin-bottom: 10px;
+    }
+    p{
+        font-size: 15px;
+        color: $black-soft;
+        margin-bottom: 26px;
+    }
+
+    .contact_info{
+        margin-bottom: 30px;
+        li{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            font-size: 15px;
+            color: $black-soft;
+
+            svg{
+                color: $red;
+                background: $cream;
+                padding: 8px;
+                width: 36px;
+                height: 36px;
+                @include border-radius(50%);
+                box-sizing: border-box;
+            }
+            a{
+                color: $black-soft;
+                text-decoration: none;
+                transition: color 0.2s ease-in-out;
+                &:hover{ color: $red; }
+            }
+        }
+    }
+
+    .quick_actions{
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+
+        .action_btn{
+            @include border-radius(30px);
+            padding: 11px 26px;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: $white;
+            box-shadow: 0 10px 20px rgba(28,25,23,0.12);
+            transition: all 0.25s ease-in-out;
+
+            &:hover{
+                transform: translateY(-3px);
+            }
+
+            &.call{ background: $red; &:hover{ background: $red-dark; } }
+            &.whatsapp{ background: #25D366; &:hover{ background: #1ea952; } }
+        }
+    }
+
+    // ============================================
+    // FORM CARD
+    // ============================================
+    .contact_form_wrap{
+        background: $white;
+        @include border-radius(14px);
+        padding: 36px;
+        box-shadow: 0 14px 40px rgba(28,25,23,0.09);
+        border-top: 3px solid $gold;
+
+        @media (max-width: 600px){
+            padding: 24px 20px;
+        }
+
+        .form_heading{
+            margin-bottom: 26px;
+            h4{
+                font-family: $font-heading;
+                font-size: 24px;
+                font-weight: 700;
+                color: $black;
+                margin-bottom: 6px;
+            }
+            p{
+                font-size: 14px;
+                color: $black-soft;
+                margin-bottom: 0;
+            }
+        }
+
+        // ---- Form layout — plain flexbox, fully controlled (no MUI Grid math) ----
+        .enquiry_form{
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        .form_row{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            > *{
+                flex: 1 1 220px;
+                min-width: 0; // prevents flex children overflowing on small screens
+            }
+
+            // Buttons shouldn't stretch to fill the row like text fields do
+            > .MuiButtonBase-root{
+                flex: 0 0 auto;
+            }
+        }
+
+        // ---- Input field styling ----
+        .MuiFormControl-root{
+            width: 100%;
+        }
+
+        .MuiInputLabel-root{
+            font-family: $font-body;
+            font-size: 14px;
+            color: $black-soft;
+
+            &.Mui-focused{
+                color: $red;
+            }
+            &.MuiInputLabel-shrink{
+                background: $white;
+                padding: 0 6px;
+            }
+        }
+
+        .MuiOutlinedInput-root{
+            font-family: $font-body;
+            font-size: 14px;
+            background: $cream;
+            @include border-radius(10px);
+            transition: background 0.2s ease-in-out;
+
+            fieldset{
+                border-color: rgba(28,25,23,0.15);
+                transition: border-color 0.2s ease-in-out;
+            }
+            &:hover{
+                background: rgba(198,149,44,0.06);
+                fieldset{
+                    border-color: $gold;
+                }
+            }
+            &.Mui-focused{
+                background: $white;
+                fieldset{
+                    border-color: $red;
+                    border-width: 1.5px;
+                }
+            }
+            input, textarea, .MuiSelect-select{
+                padding: 14px 16px;
+                color: $black;
+            }
+        }
+
+        .submit_btn{
+            background: $black;
+            color: $white;
+            padding: 13px 34px;
+            @include border-radius(30px);
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: capitalize;
+            box-shadow: 0 12px 24px rgba(28,25,23,0.15);
+            transition: all 0.25s ease-in-out;
+
+            &:hover{
+                background: $red;
+                transform: translateY(-2px);
+            }
+        }
+
+        .form_success{
+            text-align: center;
+            padding: 50px 10px;
+
+            h6{
+                font-family: $font-heading;
+                font-size: 26px;
+                color: $red;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 15px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

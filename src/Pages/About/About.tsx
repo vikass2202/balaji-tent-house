@@ -152,72 +152,78 @@ function About() {
 
       {/* ================= MISSION & VISION — 2 cards side by side ================= */}
       <Box className="mv_section">
-        <Grid container spacing={4} className="row">
-          <Grid item xs={12} md={6}>
-            <Box className="mv_card reveal">
-              <span className="mv_icon"><EmojiObjectsIcon /></span>
-              <h5>Our Mission</h5>
-              <p>
-                To create memorable celebrations through innovative designs, high-quality
-                services, and exceptional customer satisfaction while making every event
-                stress-free for our clients.
-              </p>
-            </Box>
+        <Box className="row">
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={6}>
+              <Box className="mv_card reveal">
+                <span className="mv_icon"><EmojiObjectsIcon /></span>
+                <h5>Our Mission</h5>
+                <p>
+                  To create memorable celebrations through innovative designs, high-quality
+                  services, and exceptional customer satisfaction while making every event
+                  stress-free for our clients.
+                </p>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box className="mv_card reveal" style={{ transitionDelay: "0.12s" }}>
+                <span className="mv_icon"><VisibilityIcon /></span>
+                <h5>Our Vision</h5>
+                <p>
+                  To become the most trusted event management and tent house company, recognized
+                  for creativity, professionalism, quality, and excellence in every celebration.
+                </p>
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Box className="mv_card reveal" style={{ transitionDelay: "0.12s" }}>
-              <span className="mv_icon"><VisibilityIcon /></span>
-              <h5>Our Vision</h5>
-              <p>
-                To become the most trusted event management and tent house company, recognized
-                for creativity, professionalism, quality, and excellence in every celebration.
-              </p>
-            </Box>
-          </Grid>
-        </Grid>
+        </Box>
       </Box>
 
       {/* ================= WHY CHOOSE US — icon grid ================= */}
       <Box className="why_section">
-        <Grid container spacing={3} className="row">
-          <Grid item xs={12} className="why_intro reveal">
-            <span className="eyebrow">Why Choose Us</span>
-            <h2>Why Choose Balaji Tent House?</h2>
-          </Grid>
-          {whyChooseUs.map((item, index) => (
-            <Grid item xs={6} sm={3} key={index}>
-              <Box className="why_card reveal" style={{ transitionDelay: `${index * 0.05}s` }}>
-                <span className="why_icon">{item.icon}</span>
-                <p>{item.title}</p>
-              </Box>
+        <Box className="row">
+          <Grid container spacing={3}>
+            <Grid item xs={12} className="why_intro reveal">
+              <span className="eyebrow">Why Choose Us</span>
+              <h2>Why Choose Balaji Tent House?</h2>
             </Grid>
-          ))}
-        </Grid>
+            {whyChooseUs.map((item, index) => (
+              <Grid item xs={6} sm={3} key={index}>
+                <Box className="why_card reveal" style={{ transitionDelay: `${index * 0.05}s` }}>
+                  <span className="why_icon">{item.icon}</span>
+                  <p>{item.title}</p>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Box>
 
       {/* ================= OUR TEAM — unchanged ================= */}
       <Box className="team_section">
-        <Grid container spacing={3} className="row" display="flex" justifyContent="center">
-          <Grid item xs={12}>
-            <span className="eyebrow">The People Behind The Magic</span>
-            <h2>Meet Our Team</h2>
-            <p>
-              Our dedicated professionals work together to transform your special moments into
-              unforgettable memories. From planning and decoration to lighting, sound, and
-              hospitality, every member of our team is committed to delivering excellence.
-            </p>
-          </Grid>
-          {team.map((data, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
-              <Box className="team_card reveal" style={{ transitionDelay: `${(index % 4) * 0.08}s` }}>
-                <img src={data.team_img} alt={data.team_name} />
-                <h5>{data.team_name}</h5>
-                <h6>{data.designation}</h6>
-                <p>{data.para}</p>
-              </Box>
+        <Box className="row">
+          <Grid container spacing={3} display="flex" justifyContent="center">
+            <Grid item xs={12}>
+              <span className="eyebrow">The People Behind The Magic</span>
+              <h2>Meet Our Team</h2>
+              <p>
+                Our dedicated professionals work together to transform your special moments into
+                unforgettable memories. From planning and decoration to lighting, sound, and
+                hospitality, every member of our team is committed to delivering excellence.
+              </p>
             </Grid>
-          ))}
-        </Grid>
+            {team.map((data, index) => (
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <Box className="team_card reveal" style={{ transitionDelay: `${(index % 4) * 0.08}s` }}>
+                  <img src={data.team_img} alt={data.team_name} />
+                  <h5>{data.team_name}</h5>
+                  <h6>{data.designation}</h6>
+                  <p>{data.para}</p>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Box>
 
       <Footer />

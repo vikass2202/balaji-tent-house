@@ -106,4 +106,9 @@
             font-size: 13px;
         }
     }
+    @media(max-width:767px){
+        .mob_spc{
+            margin-top: 25px;
+        }
+    }
 }

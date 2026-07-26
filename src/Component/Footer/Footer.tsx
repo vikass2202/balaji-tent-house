@@ -27,7 +27,7 @@ function Footer() {
           </ul>
         </Grid>
 
-        <Grid xs={12} sm={6} md={3}>
+        <Grid xs={6} sm={6} md={3} className="mob_spc">
           <h6>Quick Links</h6>
           <ul className="footer_links">
             <li><RouterLink to="/about">About Us</RouterLink></li>
@@ -38,7 +38,7 @@ function Footer() {
           </ul>
         </Grid>
 
-        <Grid xs={12} sm={6} md={3}>
+        <Grid xs={6} sm={6} md={3} className="mob_spc">
           <h6>Our Services</h6>
           <ul className="footer_links">
             <li>Wedding Decor</li>
@@ -49,7 +49,7 @@ function Footer() {
           </ul>
         </Grid>
 
-        <Grid xs={12} sm={6} md={3}>
+        <Grid xs={12} sm={6} md={3} className="mob_spc">
           <h6>Get In Touch</h6>
           <ul className="footer_contact">
             <li><LocationOnIcon fontSize="small" /> Dharmawala, Dehradun, U.K.</li>

@@ -17,10 +17,9 @@ function Footer() {
           <img src="/images/logo.jpeg" alt="BalaJi Tent House logo" className="footer_logo" />
           <p>Turning ordinary venues into magical celebrations for over 9 years.</p>
           <ul className="social_links">
-            <li><a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><FacebookIcon /></a></li>
-            <li><a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><InstagramIcon /></a></li>
-            <li><a  href="https://web.whatsapp.com/send?phone=919927511503&text=Hi%2C%20I'm%20interested%20in%20booking%20an%20event"
-        target="_blank" aria-label="WhatsApp"><WhatsAppIcon /></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" aria-label="Facebook" rel="noopener noreferrer"><FacebookIcon /></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" rel="noopener noreferrer"><InstagramIcon /></a></li>
+            <li><a href="https://web.whatsapp.com/send?phone=919927511503&text=Hi%2C%20I'm%20interested%20in%20booking%20an%20event" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer"><WhatsAppIcon /></a></li>
           </ul>
         </Grid>
 

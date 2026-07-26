@@ -35,18 +35,17 @@
     background-image: url('../../../public/images/banner/2.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; 
+    background-attachment: fixed; // subtle parallax on desktop
 
     @media (max-width: 900px){
-        background-attachment: scroll; 
-        height: 50vh;
-        min-height: 380px;
+        background-attachment: scroll; // fixed bg is unreliable on mobile browsers
+        height: 42vh;
+        min-height: 300px;
     }
-    @media (max-width: 767px){
-        background-attachment: scroll; 
-        height: unset;
-        min-height: 380px;
-        object-fit: cover;
+
+    @media (max-width: 480px){
+        height: 38vh;
+        min-height: 260px;
     }
 }
 
@@ -124,9 +123,6 @@
 .story_section{
     padding: 90px 16px;
     scroll-margin-top: 90px;
-    @media(max-width:767px){
-        padding: 50px 16px;
-    }
 
     .story_inner{
         max-width: 900px;
@@ -149,9 +145,6 @@
         font-weight: 700;
         color: $black;
         margin-bottom: 22px;
-        @media(max-width:767px){
-            font-size: 28px;
-        }
     }
     p{
         font-size: 16px;
@@ -170,10 +163,7 @@
 // ============================================
 .mv_section{
     background: $cream;
-    padding: 10px 0 60px;
-    @media(max-width:900px){
-        padding: 30px 10px;
-    }
+    padding: 10px 0 90px;
 
     .row{
         max-width: 1224px;
@@ -231,10 +221,6 @@
 .why_section{
     padding: 90px 0;
 
-    @media(max-width:900px){
-        padding: 50px 10px;
-    }
-
     .row{
         max-width: 1224px;
         width: 100%;
@@ -245,9 +231,6 @@
     .why_intro{
         text-align: center;
         margin-bottom: 34px;
-            @media(max-width:900px){
-                margin-bottom: 20px;
-            }
 
         .eyebrow{
             display: block;
@@ -263,10 +246,6 @@
             font-size: 32px;
             font-weight: 700;
             color: $black;
-             @media(max-width:900px){
-                font-size: 28px;
-                margin-bottom: 0;
-            }
         }
     }
 
@@ -320,8 +299,10 @@
     background: $cream;
     padding: 80px 0 90px;
     text-align: center;
-    @media(max-width:900px){
-        padding: 50px 0;
+
+    .MuiGridLegacy-container,
+    .MuiGrid-container{
+        justify-content: center;
     }
 
     .row{
@@ -346,9 +327,6 @@
         font-weight: 700;
         color: $black;
         margin-bottom: 20px;
-        @media(max-width:900px){
-            font-size: 28px;
-        }
     }
     p{
         font-family: $font-body;
@@ -356,9 +334,6 @@
         font-weight: 400;
         color: $black;
         margin-bottom: 40px;
-        @media(max-width:900px){
-           margin-bottom: 20px;
-        }
     }
     .team_card{
         background: $white;

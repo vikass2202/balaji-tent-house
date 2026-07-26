@@ -1,0 +1,32 @@
+@import '../../mixins.scss';
+
+.page_banner{
+    margin-top: 80px;
+    padding: 70px 16px;
+    text-align: center;
+    background: $black;
+    background-image: radial-gradient(circle at 20% 20%, rgba(216,31,42,0.25), transparent 45%),
+                       radial-gradient(circle at 80% 80%, rgba(198,149,44,0.2), transparent 45%);
+
+    h1{
+        font-family: $font-heading;
+        color: $white;
+        font-size: 42px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    p{
+        font-family: $font-body;
+        font-size: 14px;
+        color: rgba(255,255,255,0.6);
+        a{
+            color: $gold;
+            text-decoration: none;
+        }
+        span{
+            color: $white;
+        }
+    }
+}

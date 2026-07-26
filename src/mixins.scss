@@ -1,15 +1,23 @@
-// Color Variables
-$theme-yellow: #FFD500;
-$theme-orange: #F29602;
-$theme-blue: #6458D8;
-$black: #000;
-$white: #fff;
+// Colors
+$black: #1c1917;       // near-black, matches logo wordmark
+$black-soft: #322d2b;  // softened black for body text
+$red: #d81f2a;         // primary brand red (from logo umbrella)
+$red-dark: #9c141d;    // hover / gradient depth
+$gold: #c6952c;        // premium wedding accent
+$cream: #fbf6ef;       // warm section background (replaces flat white)
+$white: #ffffff;
+
+// Backward-compatible alias so nothing else silently breaks
+$theme-red: $red;
+
+$font-heading: "Playfair Display", serif;
+$font-body: "Poppins", sans-serif;
 
 // Class Variables
-$homePage: ".homePage";
-$navbar: ".navbar";
-$modal: ".modal";
-$filter: ".filter";
+// $homePage: ".homePage";
+// $navbar: ".navbar";
+// $modal: ".modal";
+// $filter: ".filter";
 
 /*--------------Mixins------------------*/
 @mixin box-shadow($shadow) {
@@ -30,23 +38,9 @@ $filter: ".filter";
   appearance: none;
 }
 
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return #{$remSize}rem;
-}
-
-@mixin fontSize($size) {
-  //font-size: $size;
-  font-size: calculateRem($size);
-}
-
-@mixin position(
-  $position,
-  $top: null,
-  $right: null,
-  $bottom: null,
-  $left: null
-) {
+// Mixins
+// ============================================
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
   position: $position;
   top: $top;
   right: $right;
@@ -54,13 +48,20 @@ $filter: ".filter";
   left: $left;
 }
 
-@mixin abs-position($top, $right, $bottom, $left) {
-  // @include abs-position(10px, 10px, auto, auto);
-  position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
+@mixin fontSize($size) {
+  font-size: $size;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Gold-red gradient — use sparingly as the site's one signature accent
+// (divider lines, active nav underline, button hovers)
+@mixin brand-gradient {
+  background: linear-gradient(90deg, $red 0%, $gold 100%);
 }
 
 // Theme Color Change

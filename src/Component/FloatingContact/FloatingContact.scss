@@ -1,0 +1,30 @@
+@import '../../mixins.scss';
+
+.floating_contact{
+    @include position(fixed, $bottom: 24px, $right: 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+
+    .floating_btn{
+        @include flex-center;
+        width: 54px;
+        height: 54px;
+        @include border-radius(50%);
+        color: $white;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        transition: transform 0.2s ease-in-out;
+
+        &:hover{
+            transform: scale(1.08);
+        }
+    }
+
+    .call_btn{
+        background: $red;
+    }
+    .whatsapp_btn{
+        background: #25D366;
+    }
+}

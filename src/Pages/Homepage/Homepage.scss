@@ -1,117 +1,170 @@
 @import '../../mixins.scss';
 
-
-.MuiGridLegacy-container{
-
-}
 .homepage_wrapper{
     padding-top: 80px;
+    font-family: $font-body;
+    color: $black-soft;
+
     .row {
         max-width: 1224px;
         width: 100%;
         margin: 0 auto;
-    }     
+    }
+
+    .main_banner{
+        position: relative;
+        .banner_overlay{
+            @include position(absolute, $top: 0, $left: 0);
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(28,25,23,0.55) 0%, rgba(28,25,23,0.25) 45%, rgba(28,25,23,0.65) 100%);
+        }
+        .react-multi-carousel-dot-list {
+            bottom: 40px !important;
+        }
+        .react-multi-carousel-dot button {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 2px solid $white;
+            background: transparent;
+        }
+        .react-multi-carousel-dot--active button{
+            background: $gold;
+            border-color: $gold;
+        }
+        .react-multiple-carousel__arrow{
+            z-index: 997 !important;
+        }
+    }
+
     .banner_content{
         @include position(absolute, $bottom: 50%, $left: 50%);
         transform: translate(-50%, 50%);
-        backdrop-filter: blur(4px);
         padding: 16px;
         text-align: center;
+        width: 90%;
+        max-width: 760px;
+
+        .eyebrow{
+            display: inline-block;
+            color: $gold;
+            font-family: $font-body;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
         h3{
             color: $white;
             font-size: 58px;
             margin-bottom: 12px;
             letter-spacing: 1px;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
-            font-family: "Lora", sans-serif;
+            font-family: $font-heading;
+
+            @media(max-width: 600px){
+                font-size: 34px;
+            }
         }
         h5{
             color: $white;
-            font-size: 30px;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-            font-weight: 600;
+            font-size: 26px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            font-family: $font-heading;
+
+            @media(max-width: 600px){
+                font-size: 18px;
+            }
         }
         p{
-            color: $white;
-            font-size: 20px;
-            margin-bottom: 15px;
+            color: rgba(255,255,255,0.85);
+            font-size: 18px;
+            margin-bottom: 22px;
             font-weight: 400;
+
+            @media(max-width: 600px){
+                font-size: 14px;
+            }
         }
         .cta_button{
             color: $white;
-            border: 1px solid $theme-blue;
-            padding: 6px 10px;
-            @include border-radius(10px);
-            font-size: 20px;
-            background-color: $theme-blue;
-            letter-spacing: 1px;
+            border: 1px solid $red;
+            padding: 10px 28px;
+            @include border-radius(30px);
+            font-size: 16px;
+            font-weight: 600;
+            background: $red;
+            letter-spacing: 0.5px;
             text-transform: capitalize;
-        }
-        .cta_button:hover{
-            color: $theme-blue;
-            border: 1px solid $theme-blue;
-            background-color: $white;
-            // transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-        }
-    }
+            transition: all 0.25s ease-in-out;
 
-    .main_banner{
-        .react-multi-carousel-dot-list {
-            bottom: 50px !important;
-        }
-        .react-multi-carousel-dot button {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-        }
-    }
-
-    // about section css starts here
-
-    .about_content{
-        padding: 80px 0;
-    }
-    .about_content{
-        h5{
-            font-family: "Lora", sans-serif;
-            font-size: 40px;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-        h6{
-            font-size: 25px;
-            margin-bottom: 0;
-            text-align: center;
-            margin-bottom: 12px;
-        }
-        p{
-            font-size: 20px;
-            margin-bottom: 0;
-            text-align: justify;
-            line-height: 30px;
-            letter-spacing: 1px;
-            .read-more{
-                display: block;
-                padding-top: 5px;
-                cursor: pointer;
-                width: fit-content;
-                margin: 0 auto;
+            &:hover{
+                color: $red;
+                border-color: $red;
+                background: $white;
             }
         }
     }
 
+    // about section css starts here
+    .about_content{
+        padding: 80px 0;
+        h5{
+            font-family: $font-heading;
+            font-size: 40px;
+            font-weight: 700;
+            color: $red;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        h6{
+            font-family: $font-heading;
+            font-size: 26px;
+            font-weight: 600;
+            color: $black;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        p{
+            font-size: 17px;
+            margin: 0 auto;
+            max-width: 780px;
+            text-align: center;
+            line-height: 30px;
+            letter-spacing: 0.3px;
+
+            .read-more{
+                display: inline-block;
+                margin-left: 6px;
+                color: $red;
+                font-weight: 600;
+                text-decoration: none;
+                cursor: pointer;
+
+                &:hover{
+                    color: $red-dark;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 
     // counter section css starts here
     .counter_section{
-        background: #f3f2fc;
+        background: $cream;
         padding: 80px 0;
         h6{
-            font-size: 32px;
+            font-family: $font-heading;
+            font-size: 30px;
             font-weight: 700;
-            line-height: 51px;
-            margin-bottom: 15px;
+            color: $black;
+            line-height: 42px;
+            margin-bottom: 20px;
         }
         ul{
             display: flex;
@@ -120,75 +173,89 @@
                 width: 50%;
                 position: relative;
                 margin-bottom: 24px;
-                // text-align: center;
 
                 &:nth-child(even) {
-                    padding-left: 60px;
-                    border-left: 2px solid rgba(0, 0, 0, 0.1);
+                    padding-left: 30px;
+                    border-left: 2px solid rgba(28,25,23,0.1);
                 }
                 .counterdiv {
                     padding: 10px 0px;
-
                     h3 {
-                        @include fontSize(42px);
-                        line-height: 50px;
+                        @include fontSize(38px);
+                        line-height: 46px;
                         font-weight: 700;
+                        color: $red;
+                        font-family: $font-heading;
 
                         @media(max-width:992px) {
-                            @include fontSize(28px);
-                            line-height: 40px;
+                            @include fontSize(26px);
+                            line-height: 36px;
                         }
                     }
-
                     p {
-                        @include fontSize(16px);
-                        line-height: 32px;
+                        @include fontSize(15px);
+                        line-height: 26px;
                         font-weight: 400;
-                        color: #222222;
+                        color: $black-soft;
                     }
                 }
             }
+        }
+        img{
+            @include border-radius(12px);
+            box-shadow: 0 20px 40px rgba(28,25,23,0.15);
         }
     }
 
     // testimonial section css starts here
     .testimonial_section{
         padding: 80px 0;
-    }
-    .testimonial_section{
         h5{
-            font-family: "Lora", sans-serif;
+            font-family: $font-heading;
             font-size: 40px;
-            margin-bottom: 12px;
+            font-weight: 700;
+            color: $red;
+            margin-bottom: 30px;
             text-align: center;
         }
-            
+
         .feedback_box{
             width: 100%;
             .testimonial_box{
-                background: #fff;
-                @include border-radius(10px);
-                padding: 20px;
+                background: $white;
+                @include border-radius(12px);
+                padding: 24px;
                 text-align: center;
-                border: 1px solid $theme-blue;
-                width: 384px;
-                min-height: 380px;
-                margin: 40px 0px 50px;
+                border-top: 3px solid $gold;
+                box-shadow: 0 10px 30px rgba(28,25,23,0.08);
+                width: 92%;
+                // min-height: 380px;
+                margin: 20px auto 50px;
+
                 img{
                     margin-bottom: 15px;
+                    width: 72px;
+                    height: 72px;
+                    object-fit: cover;
+                    @include border-radius(50%);
+                    border: 2px solid $gold;
                 }
                 h6{
-                    font-size: 24px;
-                    margin-bottom: 15px;
+                    font-family: $font-heading;
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: $black;
+                    margin-bottom: 10px;
                 }
                 p{
-                    font-family: 'ubuntu', sans-serif;
-                    font-size: 16px;
-                    margin-bottom: 30px;
-                    letter-spacing: 1px;
-                    text-align: justify;
+                    font-family: $font-body;
+                    font-size: 15px;
+                    margin-bottom: 20px;
+                    letter-spacing: 0.2px;
+                    text-align: center;
                     line-height: 24px;
-                    min-height: 145px;
+                    min-height: 120px;
+                    color: $black-soft;
                 }
                 .MuiStack-root{
                     display: block;
@@ -200,16 +267,62 @@
             }
             .react-multi-carousel-dot button {
                 display: inline-block;
-                width: 20px;
-                height: 20px;
+                width: 10px;
+                height: 10px;
                 border: none;
+                background: rgba(28,25,23,0.2);
             }
             .react-multi-carousel-dot--active button{
-                background-color: $theme-blue;
+                background-color: $red;
             }
         }
-        
     }
 
+    // final CTA strip
+    .cta_strip{
+        background: $black;
+        padding: 50px 0;
+        h4{
+            font-family: $font-heading;
+            color: $white;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        p{
+            color: rgba(255,255,255,0.7);
+            font-size: 15px;
+        }
+        .cta_strip_action{
+            text-align: right;
+            @media(max-width: 600px){
+                text-align: left;
+                margin-top: 16px;
+            }
+        }
+        .cta_button{
+            color: $black;
+            background: $gold;
+            border: none;
+            padding: 12px 26px;
+            @include border-radius(30px);
+            font-weight: 600;
+            text-transform: capitalize;
+            &:hover{
+                background: $white;
+            }
+        }
+    }
 
+    @media(max-width:900px){
+        .about_content{
+            padding: 50px 20px;
+        }
+        .counter_section {
+            padding: 50px 20px;
+        }
+        .cta_strip {
+            padding: 50px 20px;
+        }
+    }
 }

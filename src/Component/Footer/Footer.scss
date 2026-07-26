@@ -1,92 +1,109 @@
 @import '../../mixins.scss';
 
-.footer{
-    background: #6458d8;
-    padding: 54px 25px;
-    padding-top: 100px;
+.site_footer{
+    background: $black;
+    color: rgba(255,255,255,0.75);
+    padding: 60px 16px 0;
+    font-family: $font-body;
 
-    .row {
-        max-width: 1200px;
+    .row{
+        max-width: 1224px;
         width: 100%;
         margin: 0 auto;
     }
-    .left_section{
-        .footer_logo{
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-        h5{
-            font-family: "Ubuntu", sans-serif;
-            font-size: 22px;
-            font-weight: 500;
-            color: $white;
-            margin-bottom: 10px;
-        }
-        p{
-            font-family: "Ubuntu", sans-serif;
-            font-size: 18px;
-            color: $white;
-            margin-bottom: 0px;
-        }
-    }
-    h6{
-        color: $white;
-        font-family: "Ubuntu", sans-serif;
-        @include fontSize(20px);
-        font-weight: 600;
-        line-height: 25px;
-        margin-bottom: 24px;
-    }
-    ul{
-        li{
-            font-family: 'Ubuntu', sans-serif;
-            @include fontSize(15px);
-            line-height: 21px;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
 
-            .MuiLink-root{             
-                color: $white;
-                &:hover,
-                &:focus {
-                    opacity: 0.5;
-                }
+    .footer_logo{
+        max-width: 60px;
+        margin-bottom: 12px;
+        @include border-radius(6px);
+    }
+
+    p{
+        font-size: 14px;
+        line-height: 22px;
+        margin-bottom: 16px;
+    }
+
+    h6{
+        font-family: $font-heading;
+        color: $white;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 18px;
+        position: relative;
+        padding-bottom: 10px;
+
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 36px;
+            height: 2px;
+            @include brand-gradient;
+        }
+    }
+
+    .social_links{
+        display: flex;
+        gap: 12px;
+        li a{
+            @include flex-center;
+            width: 36px;
+            height: 36px;
+            @include border-radius(50%);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: $white;
+            transition: all 0.2s ease-in-out;
+
+            &:hover{
+                background: $red;
+                border-color: $red;
             }
         }
     }
-    .address{
-        color: $white;
-        font-family: "Ubuntu", sans-serif;
-        @include fontSize(15px);
-        line-height: 21px;
-        margin-bottom: 16px;
-    }
-    .contact{
-        @extend .address
-    }
-    .email{
-        @extend .address
-    }
-    .website_link{
-        @extend .address
-    }
-    hr{
-        border: 1px solid #ffffff99 !important;
-    }
-    .copyright{
-        color: $white;
-        font-family: "Ubuntu", sans-serif;
-        @include fontSize(15px);
-        line-height: 21px;
-        margin-bottom: 0px;
-    }
-    .social_link ul{
-        display: flex;
-        justify-content: end;
+
+    .footer_links{
         li{
-            margin-bottom: 8px;
-            margin-right: 19px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        a{
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            &:hover{
+                color: $gold;
+            }
         }
     }
 
+    .footer_contact{
+        li{
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            svg{
+                color: $gold;
+                margin-top: 2px;
+            }
+            a{
+                color: rgba(255,255,255,0.75);
+                text-decoration: none;
+                &:hover{ color: $gold; }
+            }
+        }
+    }
+
+    .footer_bottom{
+        border-top: 1px solid rgba(255,255,255,0.1);
+        margin-top: 40px;
+        padding: 18px 0;
+        text-align: center;
+        p{
+            margin: 0;
+            font-size: 13px;
+        }
+    }
 }

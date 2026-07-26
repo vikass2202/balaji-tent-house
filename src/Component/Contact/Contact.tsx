@@ -65,7 +65,7 @@ function Contact() {
       <Box className="contact_page">
         <Box className="row">
           <Grid container spacing={4}>
-            <Grid xs={12} md={5}>
+            <Grid item xs={12} md={5}>
               <span className="eyebrow">Get In Touch</span>
               <h2>Let's Plan Your Event</h2>
               <p>Call, WhatsApp, or fill the form — we usually reply within a few hours.</p>
@@ -110,7 +110,7 @@ function Contact() {
               </div>
             </Grid>
 
-            <Grid xs={12} md={7}>
+            <Grid item xs={12} md={7}>
               <Box className="contact_form_wrap">
                 {submitted ? (
                   <div className="form_success">

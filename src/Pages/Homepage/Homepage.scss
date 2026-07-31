@@ -9,6 +9,7 @@
         max-width: 1224px;
         width: 100%;
         margin: 0 auto;
+        padding: 0 16px;
     }
 
     .main_banner{
@@ -207,6 +208,204 @@
         }
     }
 
+    // ============================================
+    // OUR WORK — gallery preview (bento grid)
+    // ============================================
+    .work_section{
+        padding: 90px 0;
+
+        .work_intro{
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 40px;
+
+            .eyebrow{
+                display: block;
+                color: $red;
+                font-weight: 600;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+            h2{
+                font-family: $font-heading;
+                font-size: 34px;
+                font-weight: 700;
+                color: $black;
+                margin-bottom: 12px;
+            }
+            p{
+                font-size: 15px;
+                color: $black-soft;
+                margin-bottom: 0;
+            }
+        }
+
+        .work_grid{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            gap: 14px;
+
+            @media(max-width: 900px){
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 180px;
+            }
+            @media(max-width: 480px){
+                grid-auto-rows: 160px;
+            }
+        }
+
+        .work_tile{
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            @include border-radius(10px);
+            grid-column: span 1;
+            grid-row: span 1;
+
+            &.tile_large{
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.4s ease-in-out;
+            }
+
+            .tile_label{
+                position: absolute;
+                left: 12px;
+                bottom: 12px;
+                color: $white;
+                font-family: $font-body;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                padding: 5px 14px;
+                @include border-radius(20px);
+                background: rgba(28,25,23,0.55);
+                backdrop-filter: blur(4px);
+                opacity: 0;
+                transform: translateY(8px);
+                transition: all 0.3s ease-in-out;
+            }
+
+            &::after{
+                content: '';
+                @include position(absolute, $top: 0, $left: 0);
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg, rgba(28,25,23,0) 50%, rgba(28,25,23,0.55) 100%);
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            &:hover{
+                img{ transform: scale(1.08); }
+                &::after{ opacity: 1; }
+                .tile_label{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        .work_cta{
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .outline_button{
+            display: inline-block;
+            color: $red;
+            border: 1.5px solid $red;
+            background: transparent;
+            padding: 11px 30px;
+            @include border-radius(30px);
+            font-family: $font-body;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-transform: capitalize;
+            transition: all 0.25s ease-in-out;
+
+            &:hover{
+                background: $red;
+                color: $white;
+            }
+        }
+    }
+
+    // ============================================
+    // VISIT US — compact map + address
+    // ============================================
+    .visit_section{
+        padding: 90px 0;
+        background: $cream;
+
+        .eyebrow{
+            display: block;
+            color: $red;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        h2{
+            font-family: $font-heading;
+            font-size: 32px;
+            font-weight: 700;
+            color: $black;
+            margin-bottom: 12px;
+        }
+        p{
+            font-size: 16px;
+            color: $black-soft;
+            margin-bottom: 22px;
+            text-align: left;
+        }
+
+        .outline_button{
+            display: inline-flex;
+            align-items: center;
+            color: $red;
+            border: 1.5px solid $red;
+            background: transparent;
+            padding: 11px 28px;
+            @include border-radius(30px);
+            font-family: $font-body;
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: capitalize;
+            transition: all 0.25s ease-in-out;
+
+            &:hover{
+                background: $red;
+                color: $white;
+            }
+        }
+
+        .visit_map{
+            width: 100%;
+            height: 260px;
+            @include border-radius(12px);
+            overflow: hidden;
+            box-shadow: 0 14px 34px rgba(28,25,23,0.1);
+            border: 3px solid $white;
+
+            @media(max-width: 900px){
+                margin-top: 10px;
+            }
+        }
+    }
+
     // testimonial section css starts here
     .testimonial_section{
         padding: 80px 0;
@@ -229,7 +428,6 @@
                 border-top: 3px solid $gold;
                 box-shadow: 0 10px 30px rgba(28,25,23,0.08);
                 width: 92%;
-                // min-height: 380px;
                 margin: 20px auto 50px;
 
                 img{
@@ -321,8 +519,66 @@
         .counter_section {
             padding: 50px 20px;
         }
+        .work_section{
+            padding: 50px 20px;
+        }
+        .visit_section{
+            padding: 50px 20px;
+        }
         .cta_strip {
             padding: 50px 20px;
         }
+        .counter_section{
+            h6{
+                text-align: center;
+            }
+        }
     }
+}
+
+// ============================================
+// LIGHTBOX — click-to-zoom for "Our Work" photos
+// (kept outside .homepage_wrapper since it's a fixed, page-level overlay)
+// ============================================
+.lightbox_overlay{
+    @include position(fixed, $top: 0, $left: 0);
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.88);
+    z-index: 2000;
+    @include flex-center;
+    padding: 24px;
+    animation: lightbox_fade 0.2s ease-in-out;
+    cursor: zoom-out;
+
+    img{
+        max-width: 90vw;
+        max-height: 85vh;
+        object-fit: contain;
+        @include border-radius(8px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        cursor: default;
+    }
+
+    .lightbox_close{
+        @include position(absolute, $top: 24px, $right: 24px);
+        @include flex-center;
+        width: 44px;
+        height: 44px;
+        @include border-radius(50%);
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.3);
+        color: $white;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+
+        &:hover{
+            background: rgba(255,255,255,0.25);
+        }
+    }
+}
+
+@keyframes lightbox_fade{
+    from{ opacity: 0; }
+    to{ opacity: 1; }
 }

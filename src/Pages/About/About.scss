@@ -35,10 +35,10 @@
     background-image: url('../../../public/images/banner/2.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; // subtle parallax on desktop
+    background-attachment: fixed; 
 
     @media (max-width: 900px){
-        background-attachment: scroll; // fixed bg is unreliable on mobile browsers
+        background-attachment: scroll; 
         height: 42vh;
         min-height: 300px;
     }
@@ -163,7 +163,7 @@
 // ============================================
 .mv_section{
     background: $cream;
-    padding: 10px 0 90px;
+    padding: 90px 0 90px;
 
     .row{
         max-width: 1224px;

@@ -3,9 +3,6 @@
 .contact_page{
     padding: 80px 0 90px;
     font-family: $font-body;
-    @media(max-width:900px){
-        padding: 50px 0;
-    }
 
     .row{
         max-width: 1224px;
@@ -223,6 +220,87 @@
                 font-size: 15px;
                 margin-bottom: 0;
             }
+        }
+    }
+}
+
+// ============================================
+// LOCATION — embedded map + directions
+// ============================================
+.location_section{
+    padding: 20px 0 90px;
+    font-family: $font-body;
+
+    .row{
+        max-width: 1224px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    .location_intro{
+        text-align: center;
+        margin-bottom: 30px;
+
+        .eyebrow{
+            display: block;
+            color: $red;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        h2{
+            font-family: $font-heading;
+            font-size: 32px;
+            font-weight: 700;
+            color: $black;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 15px;
+            color: $black-soft;
+            margin-bottom: 0;
+        }
+    }
+
+    .map_wrap{
+        width: 100%;
+        height: 420px;
+        @include border-radius(14px);
+        overflow: hidden;
+        box-shadow: 0 14px 40px rgba(28,25,23,0.1);
+        border: 3px solid $white;
+
+        @media(max-width: 600px){
+            height: 300px;
+        }
+    }
+
+    .location_cta{
+        text-align: center;
+        margin-top: 28px;
+    }
+
+    .outline_button{
+        display: inline-flex;
+        align-items: center;
+        color: $red;
+        border: 1.5px solid $red;
+        background: transparent;
+        padding: 11px 30px;
+        @include border-radius(30px);
+        font-family: $font-body;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-transform: capitalize;
+        transition: all 0.25s ease-in-out;
+
+        &:hover{
+            background: $red;
+            color: $white;
         }
     }
 }

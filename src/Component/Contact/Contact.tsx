@@ -31,12 +31,12 @@ function Contact() {
     // Builds a pre-filled WhatsApp message from the form and opens a chat to your number.
     // The visitor just taps "Send" in WhatsApp and you get the enquiry instantly.
     const waText =
-      `New Enquiry from Website\n` +
-      `Name: ${form.name}\n` +
-      `Phone: ${form.phone}\n` +
-      `Event Type: ${form.eventType}\n` +
-      `Event Date: ${form.date || "Not specified"}\n` +
-      `Message: ${form.message || "-"}`;
+      `*New Enquiry from Website*\n\n` +
+      `*Name:* ${form.name}\n` +
+      `*Phone:* ${form.phone}\n` +
+      `*Event Type:* ${form.eventType}\n` +
+      `*Event Date:* ${form.date || "Not specified"}\n` +
+      `*Message:* ${form.message || "-"}`;
 
     window.open(
       `https://wa.me/${phone}?text=${encodeURIComponent(waText)}`,
@@ -157,6 +157,41 @@ function Contact() {
               </Box>
             </Grid>
           </Grid>
+        </Box>
+      </Box>
+
+      {/* Find Us — embedded map + directions */}
+      <Box className="location_section">
+        <Box className="row">
+          <Box className="location_intro">
+            <span className="eyebrow">Find Us</span>
+            <h2>Visit Our Office</h2>
+            <p>Dharmawala, Dehradun, Uttarakhand — drop by or get directions below.</p>
+          </Box>
+
+          <Box className="map_wrap">
+            <iframe
+              title="BalaJi Tent House Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d469.00329746504895!2d77.72198983603325!3d30.41844434432944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f254ba9b0c9fb%3A0x70ae75352748cc86!2sBalaji%20Tent%20house%20%26%20caterers!5e0!3m2!1sen!2sin!4v1785079659464!5m2!1sen!2sin"
+                width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </Box>
+
+          <Box className="location_cta">
+            <Button
+              className="outline_button"
+              href="https://www.google.com/maps/dir/?api=1&destination=Dharmawala,+Dehradun,+Uttarakhand"
+              target="_blank"
+              rel="noopener noreferrer"
+              startIcon={<LocationOnIcon />}
+            >
+              Get Directions
+            </Button>
+          </Box>
         </Box>
       </Box>
 

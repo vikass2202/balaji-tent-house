@@ -297,7 +297,7 @@ function Homepage() {
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <h5>What Client Says About Us !</h5>
-              </Grid>
+              
               <Box className="feedback_box">
                 <Carousel
                   swipeable={true}
@@ -328,6 +328,7 @@ function Homepage() {
                   ))}
                 </Carousel>
               </Box>
+              </Grid>
             </Grid>
           </Box>
         </Box>
@@ -337,25 +338,27 @@ function Homepage() {
           <Box className="row">
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={5}>
-                <span className="eyebrow">Visit Us</span>
-                <h2>Come Say Hi</h2>
-                <p>Dharmawala, Dehradun, Uttarakhand</p>
-                <Button
-                  className="outline_button"
-                  href="https://www.google.com/maps/dir/?api=1&destination=Dharmawala,+Dehradun,+Uttarakhand"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  startIcon={<LocationOnIcon />}
-                >
-                  Get Directions
-                </Button>
+                <Box className="visit_info">
+                  <span className="eyebrow">Visit Us</span>
+                  <h2>Come Say Hi</h2>
+                  <p>Dharmawala, Dehradun, Uttarakhand</p>
+                  <Button
+                    className="outline_button"
+                    href="https://www.google.com/maps/dir/?api=1&destination=Dharmawala,+Dehradun,+Uttarakhand"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    startIcon={<LocationOnIcon />}
+                  >
+                    Get Directions
+                  </Button>
+                </Box>
               </Grid>
               <Grid item xs={12} md={7}>
                 <Box className="visit_map">
                   <iframe
-                   title="BalaJi Tent House Location"
+                    title="BalaJi Tent House Location"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d469.00329746504895!2d77.72198983603325!3d30.41844434432944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f254ba9b0c9fb%3A0x70ae75352748cc86!2sBalaji%20Tent%20house%20%26%20caterers!5e0!3m2!1sen!2sin!4v1785079659464!5m2!1sen!2sin"
-                     width="100%"
+                    width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     loading="lazy"

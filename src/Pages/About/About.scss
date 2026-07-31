@@ -152,6 +152,7 @@
         color: $black-soft;
         margin-bottom: 18px;
         letter-spacing: 0.2px;
+        text-align: justify;
     }
     strong{
         color: $black;
@@ -376,5 +377,35 @@
             letter-spacing: 0.3px;
             margin-bottom: 0;
         }
+    }
+}
+
+@media(max-width:767px){
+    .story_section{
+        padding: 60px 16px;
+    }
+    .story_section h2{
+        font-size: 30px;
+    }
+    .mv_section{
+        padding: 60px 0 60px;
+    }
+    .why_section{
+        padding: 60px 0;
+    }
+    .why_section .why_intro{
+        margin-bottom: 15px;
+    }
+    .why_section .why_intro h2{
+        font-size: 30px;
+    }
+    .team_section{
+        padding: 60px 0;
+    }
+    .team_section h2{
+        font-size: 30px;
+    }
+    .team_section p{
+        margin-bottom: 15px;
     }
 }

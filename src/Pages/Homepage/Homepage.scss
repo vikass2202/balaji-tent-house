@@ -494,7 +494,7 @@
         .cta_strip_action{
             text-align: right;
             @media(max-width: 600px){
-                text-align: left;
+                text-align: center;
                 margin-top: 16px;
             }
         }
@@ -532,6 +532,22 @@
             h6{
                 text-align: center;
             }
+        }
+        .visit_section{
+            .eyebrow{
+                text-align: center;
+            }
+            h2{
+                text-align: center;
+            }
+        }
+        .cta_strip h4{
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .cta_strip p{
+            text-align: center;
         }
     }
 }

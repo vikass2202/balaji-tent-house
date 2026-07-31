@@ -110,5 +110,21 @@
         .mob_spc{
             margin-top: 25px;
         }
+        .footer_logo{
+            margin: 0 auto 12px;
+            display: block;
+        }      
     }
+}
+@media(max-width:767px){
+    .site_footer{
+        padding: 0 16px 0;
+    }
+    .site_footer p{
+        text-align: center;
+    } 
+    .site_footer .social_links{
+        justify-content: center;
+    }
+    
 }

@@ -210,6 +210,12 @@
             text-align: center;
             padding: 50px 10px;
 
+            .success_icon{
+                font-size: 48px;
+                color: #2e7d32;
+                margin-bottom: 12px;
+            }
+
             h6{
                 font-family: $font-heading;
                 font-size: 26px;
@@ -220,6 +226,11 @@
                 font-size: 15px;
                 margin-bottom: 0;
             }
+        }
+
+        // Fades in immediately, holds, then fades out just before the 5s auto-hide
+        .fade_in_out{
+            animation: fade_in_out 5s ease-in-out forwards;
         }
     }
 }
@@ -303,4 +314,11 @@
             color: $white;
         }
     }
+}
+
+@keyframes fade_in_out{
+    0%{ opacity: 0; transform: translateY(-6px); }
+    10%{ opacity: 1; transform: translateY(0); }
+    85%{ opacity: 1; }
+    100%{ opacity: 0; }
 }

@@ -1,0 +1,277 @@
+@import '../../mixins.scss';
+
+.gallery_page{
+    padding: 80px 0 100px;
+    font-family: $font-body;
+
+    @media(max-width: 600px){
+        padding: 50px 0 60px;
+    }
+
+    .row{
+        max-width: 1224px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+
+    // ============================================
+    // INTRO
+    // ============================================
+    .gallery_intro{
+        text-align: center;
+        max-width: 640px;
+        margin: 0 auto 40px;
+
+        .eyebrow{
+            display: block;
+            color: $red;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        h2{
+            font-family: $font-heading;
+            font-size: 36px;
+            font-weight: 700;
+            color: $black;
+            margin-bottom: 14px;
+
+            @media(max-width: 600px){
+                font-size: 26px;
+            }
+        }
+        p{
+            font-size: 15px;
+            line-height: 26px;
+            color: $black-soft;
+            margin-bottom: 0;
+        }
+    }
+
+    // ============================================
+    // FILTER PILLS — wraps cleanly on every screen size,
+    // scrolls horizontally on very small screens instead of
+    // squashing/wrapping awkwardly.
+    // ============================================
+    .gallery_filters{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 46px;
+
+        @media(max-width: 900px){
+            gap: 8px;
+            margin-bottom: 34px;
+        }
+
+        // Below this width the pills can't all fit on one line even
+        // wrapped, so switch to a smooth horizontal scroller instead
+        // of letting them wrap into a messy multi-row block.
+        @media(max-width: 767px){
+            flex-wrap: wrap;
+            justify-content: center;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            margin-left: -16px;
+            margin-right: -16px;
+            padding-left: 16px;
+            padding-right: 16px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar{ display: none; }
+        }
+
+        button{
+            background: $white;
+            border: 1.5px solid rgba(28,25,23,0.15);
+            color: $black-soft;
+            padding: 9px 22px;
+            @include border-radius(30px);
+            font-family: $font-body;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: all 0.25s ease-in-out;
+
+            &:hover{
+                border-color: $gold;
+                color: $red;
+            }
+            &.active{
+                background: $red;
+                border-color: $red;
+                color: $white;
+                box-shadow: 0 8px 18px rgba(216,31,42,0.25);
+            }
+
+            @media(max-width: 600px){
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+
+            @media(max-width: 380px){
+                padding: 7px 14px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    // ============================================
+    // GALLERY GRID — a real CSS Grid with a fixed aspect
+    // ratio per tile (image cropped with object-fit: cover).
+    // This is intentional, not accidental: a masonry/column
+    // layout leaves ragged empty space whenever a short image
+    // sits at the bottom of a taller column. A uniform grid
+    // guarantees every row lines up perfectly regardless of
+    // each source photo's original dimensions.
+    // ============================================
+    .gallery_grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+
+        @media(max-width: 900px){
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+        @media(max-width: 480px){
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    }
+
+    .gallery_item{
+        position: relative;
+        overflow: hidden;
+        @include border-radius(10px);
+        cursor: pointer;
+        box-shadow: 0 10px 26px rgba(28,25,23,0.08);
+        aspect-ratio: 4 / 3;
+
+        img{
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .gallery_item_overlay{
+            @include position(absolute, $top: 0, $left: 0);
+            width: 100%;
+            height: 100%;
+            @include flex-center;
+            flex-direction: column;
+            gap: 8px;
+            background: linear-gradient(180deg, rgba(28,25,23,0.15) 0%, rgba(28,25,23,0.65) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            text-align: center;
+            padding: 0 12px;
+
+            svg{
+                color: $gold;
+                font-size: 32px;
+            }
+            span{
+                color: $white;
+                font-family: $font-heading;
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 0.4px;
+            }
+        }
+
+        &:hover{
+            img{ transform: scale(1.08); }
+            .gallery_item_overlay{ opacity: 1; }
+        }
+
+        // Touch devices have no hover — keep the label visible, centered
+        @media(max-width: 900px){
+            .gallery_item_overlay{
+                opacity: 1;
+                background: linear-gradient(180deg, rgba(28,25,23,0.1) 0%, rgba(28,25,23,0.55) 100%);
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+
+                svg{ font-size: 24px; }
+                span{ font-size: 13px; }
+            }
+        }
+
+        @media(max-width: 480px){
+            .gallery_item_overlay{
+                svg{ font-size: 20px; }
+                span{ font-size: 12px; }
+            }
+        }
+    }
+}
+
+// ============================================
+// LIGHTBOX — click-to-zoom
+// ============================================
+.lightbox_overlay{
+    @include position(fixed, $top: 0, $left: 0);
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
+    @include flex-center;
+    padding: 24px;
+    animation: gallery_lightbox_fade 0.2s ease-in-out;
+    cursor: zoom-out;
+
+    @media(max-width: 600px){
+        padding: 14px;
+    }
+
+    img{
+        max-width: 90vw;
+        max-height: 85vh;
+        object-fit: contain;
+        @include border-radius(8px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        cursor: default;
+    }
+
+    .lightbox_close{
+        @include position(absolute, $top: 24px, $right: 24px);
+        @include flex-center;
+        width: 44px;
+        height: 44px;
+        @include border-radius(50%);
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.3);
+        color: $white;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+
+        &:hover{
+            background: rgba(255,255,255,0.25);
+        }
+
+        @media(max-width: 600px){
+            top: 14px;
+            right: 14px;
+            width: 38px;
+            height: 38px;
+        }
+    }
+}
+
+@keyframes gallery_lightbox_fade{
+    from{ opacity: 0; }
+    to{ opacity: 1; }
+}

@@ -3,6 +3,7 @@ import './App.scss';
 import Homepage from './Pages/Homepage/Homepage';
 import About from './Pages/About/About';
 import Contact from './Component/Contact/Contact';
+import Gallery from './Pages/Gallery/Gallery';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         {/* jaise-jaise naye pages banate jao, yahan Route add karte jao: */}
         {/* <Route path="/services" element={<Services />} /> */}
         {/* <Route path="/wedding-planner" element={<WeddingPlanner />} /> */}
-        {/* <Route path="/gallery" element={<Gallery />} /> */}
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
